@@ -36,7 +36,8 @@ group by pl.productline;
 select o.orderNumber,c.customerNumber,c.customerName,o.orderDate
 ,o.requiredDate,o.comments
 from orders o inner join customers c
-on o.customerNumber = c.customerNumber;
+on o.customerNumber = c.customerNumber
+where o.status ='Cancelled';
 
 -- Liệt kê id đơn hàng, id khách hàng, tên khách hàng, orderDate, requireDate, sản phẩm (id, tên, số lượng) , comment của đơn hàng có id 10165
 select o.orderNumber,c.customerNumber,c.customerName,o.orderDate
